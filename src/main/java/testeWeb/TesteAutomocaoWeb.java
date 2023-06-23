@@ -14,12 +14,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-
-
-
-
 public class TesteAutomocaoWeb {
-
    private  WebDriver driver;
    private ElementosPage elementosPage;
     @Before
@@ -41,7 +36,6 @@ public class TesteAutomocaoWeb {
             WebElement caixaDeBusca = driver.findElement(By.id("twotabsearchtextbox"));
             elementosPage.preencherCampoBusca("Teclado gamer");
             elementosPage.clicarBuscar();
-
             try {
                 WebElement resultadoBusca = driver.findElement(By.cssSelector(".a-section.a-spacing-base"));
                 String resultado = resultadoBusca.getText().toLowerCase();
@@ -72,7 +66,7 @@ public class TesteAutomocaoWeb {
         driver.close();
     }
     @Test
-    public void testeURLSucesso(){
+    public void testeURLEncontradaSucesso(){
         elementosPage.abrir();
         String url = driver.getCurrentUrl();
         assertEquals(url,"https://www.amazon.com.br/ref=nav_logo");
@@ -82,7 +76,6 @@ public class TesteAutomocaoWeb {
     public void testCarrinhoSemProdutoInvalido() {
         elementosPage.abrir();
         elementosPage.clicarCarrinho();
-
         WebElement mensagemCarrinhoZerado = driver.findElement(By.cssSelector(".a-row"));
         assertTrue(mensagemCarrinhoZerado.isDisplayed());
         assertEquals("Seu carrinho da Amazon está vazio\n" +
@@ -92,4 +85,3 @@ public class TesteAutomocaoWeb {
         driver.close();
     }
 }
-
