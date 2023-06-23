@@ -10,7 +10,6 @@ public class ElementosPage {
     private By camposDeBusca = By.id("twotabsearchtextbox");
     private By botaoPesquisar = By.id("nav-search-submit-button");
     private By resultadoBusca = By.cssSelector(".a-section.a-spacing-base");
-    private By mensagemNaoEncontrado = By.cssSelector(".a-row");
     private By btnCarrinho =  By.id("nav-cart");
     public ElementosPage(WebDriver driver) {
         this.driver = driver;
@@ -29,8 +28,5 @@ public class ElementosPage {
     public void clicarCarrinho(){
         driver.findElement(By.id("nav-cart")).click();
     }
-//    public void mensagemNaoEncontrado(){
-//        driver.findElement(By.cssSelector(".a-row"));
-//    }
 }
 
