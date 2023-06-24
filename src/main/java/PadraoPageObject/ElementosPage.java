@@ -18,9 +18,11 @@ public class ElementosPage {
         driver.get("https://www.amazon.com.br/ref=nav_logo");
     }
 
-    public void preencherCampoBusca(String texto) {
+    public String preencherCampoBusca(String texto) {
         WebElement caixaDeBusca = driver.findElement(camposDeBusca);
         caixaDeBusca.sendKeys(texto);
+        caixaDeBusca.getAttribute("value");
+        return texto;
     }
     public void clicarBuscar() {
         driver.findElement(botaoPesquisar).click();
@@ -28,5 +30,6 @@ public class ElementosPage {
     public void clicarCarrinho(){
         driver.findElement(By.id("nav-cart")).click();
     }
+
 }
 

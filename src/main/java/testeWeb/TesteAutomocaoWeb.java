@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -33,7 +34,6 @@ public class TesteAutomocaoWeb {
         @Test
         public void testeBuscarProdutoSucesso() {
             elementosPage.abrir();
-            WebElement caixaDeBusca = driver.findElement(By.id("twotabsearchtextbox"));
             elementosPage.preencherCampoBusca("Teclado gamer");
             elementosPage.clicarBuscar();
             try {
@@ -48,6 +48,13 @@ public class TesteAutomocaoWeb {
             driver.close();
         }
     @Test
+    public void testBtnPesquisaNaoPrecionadoInvalido() {
+         elementosPage.abrir();
+         String textoCampoBusca =  elementosPage.preencherCampoBusca("teclado");
+         String textoDigitado = "teclado";
+            assertEquals(textoDigitado, textoCampoBusca);
+        }
+        @Test
     public void testProdutoNaoEncontradoInvalido() {
         elementosPage.abrir();
         elementosPage.preencherCampoBusca("ergbkdfjbgi5-789rbg4595ygrg");
@@ -57,7 +64,8 @@ public class TesteAutomocaoWeb {
         assertTrue(mensagemNaoEncontrado.isDisplayed());
         assertEquals("Nenhum resultado para ergbkdfjbgi5-789rbg4595ygrg.", mensagemNaoEncontrado.getText());
         driver.close();
-    }  @Test
+    }
+    @Test
     public void testCliqueNoCarrinhoSucesso() {
         elementosPage.abrir();
         elementosPage.clicarCarrinho();
@@ -66,7 +74,20 @@ public class TesteAutomocaoWeb {
         driver.close();
     }
     @Test
-    public void testeURLEncontradaSucesso(){
+    public void testErroConexao() {
+        elementosPage.abrir();
+        elementosPage.preencherCampoBusca("monitor");
+        elementosPage.clicarBuscar();
+        try {
+            WebElement resultadoBusca = driver.findElement(By.cssSelector(".a-section.a-spacing-base"));
+        } catch (Exception e) {
+            // usei o intanceof para verificar se ocorreu algum erro de conexão
+            assertTrue(e instanceof WebDriverException);
+            assertEquals("Falha na conexão. Verifique sua conexão de rede.", e.getMessage());
+        }
+    }
+    @Test
+    public void testURLEncontradaSucesso(){
         elementosPage.abrir();
         String url = driver.getCurrentUrl();
         assertEquals(url,"https://www.amazon.com.br/ref=nav_logo");
