@@ -117,6 +117,7 @@ public class TesteAutomocaoWeb {
                 "Compre ofertas do dia\n" +
                 "Faça login na sua conta\n" +
                 "Inscreva-se agora", mensagemCarrinhoZerado.getText());
+
         driver.close();
     }
 }
