@@ -54,6 +54,22 @@ public class TesteAutomocaoWeb {
          String textoDigitado = "teclado";
             assertEquals(textoDigitado, textoCampoBusca);
         }
+    @Test
+    public void testSelecionarProdutoEComprar() {
+       elementosPage.abrir();
+       elementosPage.preencherCampoBusca("teclado gamer");
+       elementosPage.clicarBuscar();
+       elementosPage.clicandoProduto();
+
+        // adicionando produto ao carrinho
+       elementosPage.adicionandoProdutoNoCarrinho();
+       //  contando mais cinco segundos
+       elementosPage.cliqueParairParaCarrinho();
+       elementosPage.cliqueFecharPedido();
+       WebElement login = driver.findElement(By.className("a-section"));
+
+       assertTrue(login.getText().contains("Fazer login"));
+    }
         @Test
     public void testProdutoNaoEncontradoInvalido() {
         elementosPage.abrir();
@@ -80,9 +96,7 @@ public class TesteAutomocaoWeb {
         elementosPage.clicarBuscar();
         try {
             WebElement resultadoBusca = driver.findElement(By.cssSelector(".a-section.a-spacing-base"));
-        } catch (Exception e) {
-            // usei o intanceof para verificar se ocorreu algum erro de conexão
-            assertTrue(e instanceof WebDriverException);
+        } catch (WebDriverException e) {
             assertEquals("Falha na conexão. Verifique sua conexão de rede.", e.getMessage());
         }
     }
