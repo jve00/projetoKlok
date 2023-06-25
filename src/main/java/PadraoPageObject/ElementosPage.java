@@ -12,7 +12,7 @@ public class ElementosPage {
     private By botaoPesquisar = By.id("nav-search-submit-button");
     private By resultadoBusca = By.cssSelector(".a-section.a-spacing-base");
     private By btnCarrinho =  By.id("nav-cart");
-    private By mensagemErroLocator = By.cssSelector(" ");
+
 
     public ElementosPage(WebDriver driver) {
         this.driver = driver;
@@ -45,10 +45,6 @@ public class ElementosPage {
 
     public void cliqueFecharPedido(){
             driver.findElement(By.name("proceedToRetailCheckout")).click();
-    }
-    public String obterMensagemErro() {
-        WebElement mensagemErro = driver.findElement(mensagemErroLocator);
-        return mensagemErro.getText();
     }
 //    uso esse metodo para ver as transições dos comandos que passei.
     public void contandoCincoSegundos() {
