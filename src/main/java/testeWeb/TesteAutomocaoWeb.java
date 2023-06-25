@@ -12,8 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TesteAutomocaoWeb {
    private  WebDriver driver;
@@ -51,8 +50,8 @@ public class TesteAutomocaoWeb {
     public void testBtnPesquisaNaoPrecionadoInvalido() {
          elementosPage.abrir();
          String textoCampoBusca =  elementosPage.preencherCampoBusca("teclado");
-         String textoDigitado = "teclado";
-            assertEquals(textoDigitado, textoCampoBusca);
+         String url = driver.getCurrentUrl();
+         assertEquals(url,"https://www.amazon.com.br/ref=nav_logo");
         }
     @Test
     public void testSelecionarProdutoEComprar() {
