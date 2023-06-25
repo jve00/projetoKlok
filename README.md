@@ -3,7 +3,7 @@
 
 #desafio 
 
-Desafio pedido pela klok, com a inteção de testar as habilidades dos participantes do processo seletivo, referente a uma vaga de estágio.
+Desafio pedido pela klok, com a ideia de testar as habilidades dos participantes do processo seletivo, referente a uma vaga de estágio.
 
 ⚙️ Executando os testes
 
