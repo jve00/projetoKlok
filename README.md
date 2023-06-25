@@ -10,6 +10,7 @@ Desafio pedido pela klok, com a inteção de testar as habilidades dos participa
 Esse projeto foi desenvolvido com o padrão de projeto PageObject que é uma abordagem comum para organizar e estruturar os testes automatizados.
 O uso do mesmo ajuda a organizar e reutilizar o código de interação com os elementos da página, tornando os testes mais legíveis e fáceis de manter.
 fiz um split de teste, para me ajudar a testar todos os testes, deixando assim, o memso mais pratico enquanto eu desenvolvia.
+
 ⌨️ Explicando cada teste
 
 testeBuscarProdutoSucesso(): 
