@@ -46,5 +46,6 @@ Maven - Gerente de Dependência
 
 
 🎁 gratidão
+
 Foi um prazer desenvolver esse teste de automoção, pois agregou muito com os meus conhecimentos, e tive a oportunidade de colocar em pratica os meus conhecimentos.
 com ❤️ por Joao vitor 😊
