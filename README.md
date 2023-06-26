@@ -9,7 +9,7 @@ Desafio pedido pela klok, com a ideia de testar as habilidades dos participantes
 
 Esse projeto foi desenvolvido com o padrão de projeto PageObject que é uma abordagem comum para organizar e estruturar os testes automatizados.
 O uso do mesmo ajuda a organizar e reutilizar o código de interação com os elementos da página, tornando os testes mais legíveis e fáceis de manter.
-fiz um split de teste, para me ajudar a testar todos os testes, deixando assim, o memso mais pratico enquanto eu desenvolvia.
+fiz um split de teste, para me ajudar a testar todos os testes, deixando assim, Mais pratico enquanto eu desenvolvia.
 
 ⌨️ Explicando cada teste
 
@@ -39,7 +39,7 @@ Neste teste, é aberta a página inicial, clicado no botão do carrinho, e verif
 
 🛠️ Construído com
 IntelliJ IDEA
-Feito na lingauem Java
+Feito na linguagem Java
 Selenium 
 Framework Junit
 Maven - Gerente de Dependência
